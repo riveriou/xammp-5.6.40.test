@@ -30,5 +30,6 @@ EXPOSE 80
 # write a startup script
 RUN echo '/opt/lampp/lampp start' >> /startup.sh
 RUN echo '/usr/bin/supervisord -n' >> /startup.sh
+RUN touch init.sh && chmod +x /*.sh
 
 CMD ["sh", "/startup.sh"]
