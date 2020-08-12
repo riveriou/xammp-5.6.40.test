@@ -17,7 +17,7 @@ RUN ln -sf /opt/lampp/bin/mysql /usr/bin/
 RUN echo "<?PHP phpinfo(); ?>" >> /opt/lampp/htdocs/test.php
 
 RUN apt-get install -y supervisor
-RUN apt-get clean
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN echo "[supervisord] " >> /etc/supervisor/conf.d/supervisord.conf
 RUN echo "nodaemon=true" >> /etc/supervisor/conf.d/supervisord.conf
